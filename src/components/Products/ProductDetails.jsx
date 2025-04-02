@@ -181,6 +181,7 @@ const ProductDetails = () => {
                                         <td className='py-2 font-semibold'>Material:</td>
                                         <td className='py-2'>{selectedProduct.material}</td>
                                     </tr>
+                                    
                                     {/* Add more characteristics as needed */}
                                 </tbody>
                             </table>
