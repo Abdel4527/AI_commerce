@@ -198,6 +198,7 @@ const NewArrivals = () => {
                                 <p className="mt-1">${product.price}</p>
                             </Link>
                         </div>
+                        
                     </div>
                 ))}
             </div>
