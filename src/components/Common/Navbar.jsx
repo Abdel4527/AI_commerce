@@ -4,6 +4,10 @@ import { IoMdClose } from "react-icons/io";
 import SearchBar from "./SearchBar";
 import CartDrawer from "../Layout/CartDrawer";
 import { useState } from "react";
+
+
+
+
 const Navbar = () => {
 
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -25,13 +29,14 @@ const Navbar = () => {
             </div>
             {/* menu */}
             <div className="hidden md:flex space-x-6">
-                <Link to="#" className="text-gray-700 hover:text-black text-sm font-medium uppercase">men</Link>
+                <Link to="/collections/all" className="text-gray-700 hover:text-black text-sm font-medium uppercase">men</Link>
                 <Link to="#" className="text-gray-700 hover:text-black text-sm font-medium uppercase">women</Link>
                 <Link to="#" className="text-gray-700 hover:text-black text-sm font-medium uppercase">top wear</Link>
                 <Link to="#" className="text-gray-700 hover:text-black text-sm font-medium uppercase">bottom wear</Link>
             </div>
             {/* Right */}
             <div className="flex items-center space-x-4">
+                <Link to="/admin" className="block bg-black text-sm rounded px-2 text-white">Admin</Link>
                 <Link to="/profile" className="hover:text-black">
                     <HiOutlineUser className="h-6 w-6"/>
                 </Link>

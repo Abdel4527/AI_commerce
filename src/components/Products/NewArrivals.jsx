@@ -6,6 +6,8 @@ const NewArrivals = () => {
     const scrollRef = useRef(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(true);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
 
     const newArrivals = [
         {
@@ -116,7 +118,7 @@ const NewArrivals = () => {
         scrollRef.current.scrollLeft = canScrollLeft - walk;
     };
 
-    const handleMouseUp0rLeave = () => {
+    const handleMouseUpOrLeave = () => {
         setIsDragging(false);   
     };
 
@@ -158,7 +160,7 @@ const NewArrivals = () => {
                 <p className="text-gray-600 mb-8 text-lg">
                     Check out our latest products.
                 </p>
-                <div className="absolute right-0 bottom-[-30px] flex space-x-2">
+                <div className="absolute right-4 bottom-[-30px] flex space-x-2 z-10">
                     <button 
                         onClick={() => scroll("left")} 
                         disabled={!canScrollLeft} 
@@ -179,8 +181,8 @@ const NewArrivals = () => {
             <div ref={scrollRef} className="container mx-auto overflow-x-scroll flex space-x-6 relative" 
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp0rLeave}
-                onMouseLeave={handleMouseUp0rLeave}
+                onMouseUp={handleMouseUpOrLeave}
+                onMouseLeave={handleMouseUpOrLeave}
              >
                 {newArrivals.map((product) => (
                     <div key={product.id} className="min-w-[100%] sm:min-w-[50%] lg:min-w-[30%] relative">
